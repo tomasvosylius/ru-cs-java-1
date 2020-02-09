@@ -33,8 +33,7 @@ public class Group
      */
     public void addStudent(Student student)
     {
-        System.out.println("[debug] adding student to group: " + student.getNumber() + ", " + student.getName() + " " + student.getSurname());
-        if(last_idx >= this.array.length - 1)
+        if(last_idx >= this.array.length)
         {
             // this would cause out-of-bound error. return
             return;
@@ -44,16 +43,26 @@ public class Group
         this.last_idx += 1; // increase last index by 1
     }
   
+    /**
+     * 
+     * @param number student-number to look for when editing
+     * @param name new name
+     * @param surname new surname
+     */
     public void editStudent(int number, String name, String surname)
     {
-        int s_i = findStudentByNumber(number);
+        int s_i = this.findStudentByNumber(number);
         if(s_i != -1)
         {
             this.array[s_i].setName(name);
-            this.array[s_i].setName(surname);
+            this.array[s_i].setSurname(surname);
         }
     }
-    
+    /**
+     * 
+     * @param number student number to look for
+     * @return index in array
+     */
     private int findStudentByNumber(int number)
     {
         for(int s = 0; s < this.last_idx; s++)
@@ -70,14 +79,11 @@ public class Group
     @Override
     public String toString()
     {
-        System.out.println("Printing all students");
         StringBuilder str = new StringBuilder();
         for(Student s : this.array)
         {
-            System.out.println("Student: " + s);
             str.append(s).append("\n");
         }
         return str.toString();
     }   
-
 }

@@ -70,6 +70,6 @@ public class Student
     @Override
     public String toString()
     {
-        return (this.name + " " + this.surname + " s" + this.number);
+        return (this.name + " " + this.surname + ", s" + this.number);
     }
 }

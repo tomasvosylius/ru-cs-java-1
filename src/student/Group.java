@@ -70,11 +70,12 @@ public class Group
     @Override
     public String toString()
     {
-        // for(Student s : this.array)
-        for(int s = 0; s < this.array.length; s++)
+        System.out.println("Printing all students");
+        StringBuilder str = new StringBuilder();
+        for(Student s : this.array)
         {
-            // System.out.println(s.toString());
-            System.out.println("Printing student: " + s + " " + this.array[s]);
+            System.out.println("Student: " + s);
+            str.append(s).append("\n");
         }
         return str.toString();
     }   

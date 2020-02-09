@@ -26,10 +26,6 @@ public class Main
         }
      
         System.out.println("The group now contains:");
-        System.out.println(group.toString());
-        /*for(Student s : group.getStudents())
-        {
-            System.out.println(s);
-        }*/
+        System.out.println(group);
     }
 }

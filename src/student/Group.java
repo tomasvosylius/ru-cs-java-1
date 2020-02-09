@@ -33,7 +33,7 @@ public class Group
      */
     public void addStudent(Student student)
     {
-        System.out.println("[debug] adding student to group to group: " + student.getNumber() + ", " + student.getName() + " " + student.getSurname());
+        System.out.println("[debug] adding student to group: " + student.getNumber() + ", " + student.getName() + " " + student.getSurname());
         if(last_idx >= this.array.length - 1)
         {
             // this would cause out-of-bound error. return
